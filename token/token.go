@@ -21,9 +21,15 @@ const (
 	INT = "INT"
 
 	// ASSIGN は識別子
-	ASSIGN = "="
-	// PLUS 演算子
-	PLUS = "+"
+	ASSIGN   = "="
+	PLUS     = "+"
+	MINUS    = "-"
+	ASTERISK = "*"
+	SLASH    = "/"
+	BANG     = "!"
+
+	LT = "<"
+	GT = ">"
 
 	// デリミタ
 	COMMA     = ","
