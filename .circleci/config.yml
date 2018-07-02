@@ -1,0 +1,23 @@
+version: 2
+jobs:
+  test:
+    docker:
+      - image: circleci/golang:1.10
+    working_directory: /go/src/github.com/ryosan-470/monkey-lang
+
+    steps:
+      - checkout
+      - run: go vet ./...
+      - run: go test -v -race ./...
+      - run:
+          name: Coverage
+          command: |
+            go get -u github.com/haya14busa/goverage
+            goverage -coverprofile=./coverage.text ./...
+      - run: bash <(curl -s https://codecov.io/bash)
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test
