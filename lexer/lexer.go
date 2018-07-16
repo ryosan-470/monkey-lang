@@ -1,6 +1,8 @@
 package lexer
 
-import "github.com/ryosan-470/monkey-lang/token"
+import (
+	"github.com/ryosan-470/monkey-lang/token"
+)
 
 // Lexer は 字句解析を行うための構造体
 type Lexer struct {
